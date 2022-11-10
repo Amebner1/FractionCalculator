@@ -9,7 +9,8 @@ public class FracCalc {
         System.out.println("Input 2 Fractions with a space in between them");
         String fraction = input.nextLine();
         input.close();
-        System.out.println(produceAnswer(fraction));
+        String why = produceAnswer(fraction);
+        System.out.println(why);
     }
     
     // ** IMPORTANT ** DO NOT DELETE THIS FUNCTION.  This function will be used to test your code
@@ -23,8 +24,25 @@ public class FracCalc {
     public static String produceAnswer(String input)
     { 
         // TODO: Implement this function to produce the solution to the input
-        String frac1 = input.substring(0, input.indexOf("+"));
-        String frac2 = input.substring(input.indexOf("+")+1);
+        Scanner in = new Scanner(input);
+        in.useDelimiter(" ");
+        String frac2 = "";
+        String frac1 = "";
+        String symbol = "";
+
+        if (in.hasNextLine()){
+            frac1 = in.next();
+
+        }
+        if (in.hasNextLine()){
+            symbol = in.next();
+
+        }
+        if (in.hasNextLine()){
+            frac2 = in.next();
+
+        }
+        in.close();
         return frac2;
     }
 
