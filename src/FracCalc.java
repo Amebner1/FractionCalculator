@@ -22,7 +22,7 @@ public class FracCalc {
     // The function should return the result of the fraction after it has been calculated
     //      e.g. return ==> "1_1/4"
     public static String produceAnswer(String input)
-    { 
+    {
         // TODO: Implement this function to produce the solution to the input
         Scanner in = new Scanner(input);
         in.useDelimiter(" ");
@@ -32,18 +32,43 @@ public class FracCalc {
 
         if (in.hasNextLine()){
             frac1 = in.next();
-
-        }
+        } /* Checkpoint 1 CODE*/
         if (in.hasNextLine()){
             symbol = in.next();
-
         }
-        if (in.hasNextLine()){
+        if (in.hasNextLine()) {
             frac2 = in.next();
-
         }
         in.close();
-        return frac2;
+
+        Scanner take = new Scanner(frac2);
+        int whole = 0;
+        int numerator = 0;
+        int denominator = 0;
+
+        take.useDelimiter("[^0-9]");
+
+        if (take.hasNextInt()){
+            whole = take.nextInt();
+            if (take.hasNextInt()){
+                numerator = take.nextInt();
+                if (take.hasNextInt()){
+                    denominator = take.nextInt();
+                }
+                else {
+                    denominator = numerator;
+                    numerator = whole;
+                    whole = 0;
+                }
+            }
+            else {
+                denominator = 1;
+            }
+        } /* Checkpoint 2 CODE*/
+        take.close();
+
+        return "whole:" + whole + " numerator:" + numerator + " denominator:" + denominator;
+
     }
 
     // TODO: Fill in the space below with any helper methods that you think you will need
