@@ -46,7 +46,7 @@ public class FracCalc {
         int numerator = 0;
         int denominator = 0;
 
-        take.useDelimiter("[^0-9]");
+        take.useDelimiter("[^-0-9]");
 
         if (take.hasNextInt()){
             whole = take.nextInt();
