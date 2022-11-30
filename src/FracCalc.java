@@ -67,8 +67,24 @@ public class FracCalc {
         } /* Checkpoint 2 CODE*/
         take.close();
 
-        return "whole:" + whole + " numerator:" + numerator + " denominator:" + denominator;
+        Fraction fraction1 = new Fraction(frac1);
+        Fraction fraction2 = new Fraction(frac2);
 
+        if (symbol.equals("+")){
+            fraction1.add(fraction2);
+        }
+        else if (symbol.equals("-")){
+            fraction1.subtract(fraction2);
+        }
+        else if (symbol.equals("*")){
+            fraction1.multiply(fraction2);
+        }
+        else if (symbol.equals("/")){
+            fraction1.divide(fraction2);
+        }
+
+
+        return fraction1.toString();
     }
 
     // TODO: Fill in the space below with any helper methods that you think you will need

@@ -64,8 +64,29 @@ public class Fraction
         // IMPLEMENT THIS METHOD
         numerator = numerator * other.getNumerator();
         denominator = other.getDenominator() * denominator;
+        if (denominator < 0) {
+            denominator *= -1;
+        }
+    }
+    public void divide(Fraction other) {
+        if (numerator < 0 && other.getNumerator() < 0) {
+            numerator *= -1;
+        }
+        else if (other.getNumerator() < 0 ){
+            numerator *= -1;
+        }
+        numerator = numerator * other.getDenominator();
+        denominator = denominator * other.getNumerator();
+        if (denominator < 0) {
+            denominator *= -1;
+        }
     }
     public String toString() {
-        return numerator +" / "+ denominator;
+        if (numerator == 0){
+            return "0";
+        }
+        else {
+            return numerator + "/" + denominator;
+        }
     }
 }
