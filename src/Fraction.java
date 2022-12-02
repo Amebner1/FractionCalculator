@@ -81,6 +81,20 @@ public class Fraction
             denominator *= -1;
         }
     }
+
+    public int gcf(int n, int d) {
+        if (d == 0){
+            return n;
+        }
+        else {
+            return gcf(d, n % d)
+        }
+    }
+
+    public void simplify(){
+
+    }
+
     public String toString() {
         if (numerator == 0){
             return "0";
