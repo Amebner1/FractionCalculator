@@ -83,6 +83,7 @@ public class FracCalc {
             fraction1.divide(fraction2);
         }
 
+        fraction1.simplify();
 
         return fraction1.toString();
     }

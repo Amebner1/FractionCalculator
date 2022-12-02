@@ -87,17 +87,39 @@ public class Fraction
             return n;
         }
         else {
-            return gcf(d, n % d)
+            return gcf(d, n % d);
         }
     }
 
     public void simplify(){
+        int f;
+
+        f = gcf(numerator, denominator);
+        if (f < 0){
+            f *= -1;
+        }
+        numerator /= f;
+        denominator /= f;
+
 
     }
 
     public String toString() {
         if (numerator == 0){
             return "0";
+        }
+        else if (denominator == 1){
+            return numerator + "";
+        }
+        else if (numerator > denominator){
+            int whole = numerator / denominator;
+            numerator = numerator %denominator;
+            return whole + "_" + numerator + "/" + denominator;
+        }
+        else if (numerator*-1 > denominator){
+            int whole = numerator / denominator;
+            numerator = (numerator %denominator) * -1;
+            return whole + "_" + numerator + "/" + denominator;
         }
         else {
             return numerator + "/" + denominator;
