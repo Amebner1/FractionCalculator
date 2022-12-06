@@ -21,6 +21,13 @@ public class FracCalc {
     //        
     // The function should return the result of the fraction after it has been calculated
     //      e.g. return ==> "1_1/4"
+
+    /**
+     * The produceAnswer Method combines 2 fraction and then produces the anwser
+     *
+     * @param input is a string that contains a mathmatical symbol and two fractions
+     * @return String that is the final fraction
+     */
     public static String produceAnswer(String input)
     {
         // TODO: Implement this function to produce the solution to the input

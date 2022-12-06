@@ -6,6 +6,12 @@ public class Fraction
     private int numerator;
     private int denominator;
 
+    /**
+     * This method creates a Fraction Object using a String.
+     * The fraction will always become improper
+     *
+     * @param frac takes a String thats a fraction and makes it an improper fractions
+     */
     public Fraction (String frac)
     {
         Scanner take = new Scanner(frac);
@@ -39,12 +45,22 @@ public class Fraction
             }
         }
     }
+
+    /**
+     * This method returns the numerator from a Fraction object
+     * @return int the numerator
+     */
     public int getNumerator() {
         return numerator;
     }
     public int getDenominator() {
         return denominator;
     }
+
+    /**
+     *
+     * @param x
+     */
     public void setNumerator(int x) {
         x = numerator;
     }
